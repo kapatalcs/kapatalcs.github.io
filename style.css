@@ -230,3 +230,34 @@ footer {
   padding-top: 5rem; /* Header varsa */
   color: var(--text-color);
 }
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.social-btn img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.social-btn:hover {
+  background-color: var(--primary-color);
+  color: #0b0c10;
+}
