@@ -1,20 +1,17 @@
-// Hamburger menü aç/kapa
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.querySelector(".nav-links");
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
 });
 
-// Scroll ile aktif menü
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
   let current = "";
-
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 150;
     if (scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
