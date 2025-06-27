@@ -33,6 +33,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin-right: 3rem;
 }
 
 nav ul li a {
@@ -76,9 +77,10 @@ nav ul li a:hover {
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 4rem 2rem;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .hero-text {
@@ -138,7 +140,7 @@ body.light-mode nav ul li a:hover {
 #language-toggle {
   position: fixed;
   top: 1rem;
-  right: 1rem;
+  right: 1.5rem;
   display: flex;
   gap: 0.5rem;
   z-index: 1000;
@@ -155,4 +157,44 @@ body.light-mode nav ul li a:hover {
 
 #language-toggle img:hover {
   transform: scale(1.1);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #0f172a;
+  border: 1px solid #22d3ee;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.2);
+}
+
+.project-card h3 {
+  color: #22d3ee;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 }
