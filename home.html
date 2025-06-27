@@ -47,15 +47,6 @@
       localStorage.setItem('language', lang);
     }
 
-    function detectTheme() {
-      const userTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      const storedTheme = localStorage.getItem('theme');
-      if ((storedTheme === 'light') || (!storedTheme && userTheme === 'light')) {
-        document.body.classList.add('light-mode');
-        document.getElementById('theme-toggle')?.classList.replace('fa-sun', 'fa-moon');
-      }
-    }
-
     function detectLanguage() {
       const storedLang = localStorage.getItem('language');
       if (storedLang) {
@@ -68,19 +59,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       detectLanguage();
-      detectTheme();
       });
-
-      const toggle = document.getElementById('theme-toggle');
-      if (toggle) {
-        toggle.addEventListener('click', () => {
-          document.body.classList.toggle('light-mode');
-          toggle.classList.toggle('fa-sun');
-          toggle.classList.toggle('fa-moon');
-          localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        });
-      }
-    });
   </script>
 </body>
 </html>
