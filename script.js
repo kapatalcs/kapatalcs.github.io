@@ -37,7 +37,6 @@ var typed = new Typed('.typed-text', {
   cursorChar: '|',
 });
 
-});
 
 closeIcon.addEventListener("click", function(){
     sideBar.classList.remove("open-sidebar");
