@@ -24,3 +24,13 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+var typed = new Typed('.typed-text', {
+  strings: ['Siber Güvenlik Uzmanı', 'Pentester', 'Backend Geliştirici'],
+  typeSpeed: 60,
+  backSpeed: 40,
+  backDelay: 1500,
+  loop: true,
+  showCursor: true,
+  cursorChar: '|',
+});
