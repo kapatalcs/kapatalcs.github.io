@@ -28,7 +28,7 @@ window.addEventListener("scroll", () => {
 
 // Typed.js animasyonu
 var typed = new Typed('.typed-text', {
-  strings: ['Siber Güvenlik Uzmanı', 'Pentester', 'Backend Geliştirici'],
+  strings: ['Bilgisayar Mühendisliği Öğrencisi', 'Purple Team', 'Güvenlik Mühendisi'],
   typeSpeed: 60,
   backSpeed: 40,
   backDelay: 1500,
