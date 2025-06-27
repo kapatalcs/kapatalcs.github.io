@@ -65,14 +65,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       detectLanguage();
       detectTheme();
-      document.getElementById('start-btn').addEventListener('click', () => {
-        document.getElementById('main-content').style.display = 'block';
-        document.querySelector('.hero').style.display = 'none';
       });
-      document.getElementById('start-btn-tr').addEventListener('click', () => {
-        document.getElementById('main-content').style.display = 'block';
-        document.querySelector('.hero').style.display = 'none';
-      });
+  
 
       const toggle = document.getElementById('theme-toggle');
       if (toggle) {
