@@ -1,55 +1,81 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yusuf İslam Özaydın</title>
+  <title>Security Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SOMEHASH" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Yusuf İslam Özaydın</h1>
-      <p>Computer Engineering Student & Security Enthusiast</p>
-      <nav>
-        <a href="#about">Hakkımda</a>
-        <a href="#projects">Projeler</a>
-        <a href="#contact">İletişim</a>
-      </nav>
-    </div>
+    <div class="logo">CSume<span>Secure</span></div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#awards">Awards</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Appointment</a>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>Hakkımda</h2>
-      <p>Bilgisayar mühendisliği öğrencisiyim. Sistem güvenliği, açık kaynak yazılımlar ve otomasyon konularına özel ilgi duyuyorum.</p>
-    </section>
+  <section class="hero" id="home">
+    <div class="hero-text" data-aos="fade-right">
+      <h4>Hello I'm</h4>
+      <h1>Csume Jakson</h1>
+      <h3>Cyber Security Expert</h3>
+      <p>It's strange a photographer spends years, even a lifetime, trying to capture moments that together don't even add up to a couple of hours. Life is like a camera.</p>
+      <a href="#" class="btn primary">Get Started</a>
+      <a href="cv/Csume_Jakson_CV.pdf" class="btn" download><i class="fas fa-download"></i> Download CV</a>
+    </div>
+    <div class="hero-image" data-aos="fade-left">
+      <img src="https://images.unsplash.com/photo-1607083203293-006c0f314de5?auto=format&fit=crop&w=880&q=80" alt="Cyber Security" />
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2>Projeler</h2>
+  <section class="section" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I am a passionate Cyber Security Engineer who protects systems and defends digital frontiers with modern tools and strategies. My mission is to secure infrastructures and ensure privacy at all layers.</p>
+  </section>
 
-      <div class="project">
-        <h3>SaltStack Developer Environment</h3>
-        <p>Salt tabanlı geliştirme ortamı otomasyonu.</p>
-        <a href="https://github.com/kapatalcs/kapatal-dev-env-saltstack" target="_blank">→ GitHub'da Gör</a>
-      </div>
+  <section class="section" id="services" data-aos="fade-up">
+    <h2>Services</h2>
+    <ul class="service-list">
+      <li><i class="fas fa-network-wired"></i> Network Penetration Testing</li>
+      <li><i class="fas fa-shield-alt"></i> SIEM Monitoring & Response</li>
+      <li><i class="fas fa-cloud"></i> Cloud Security Audits</li>
+    </ul>
+  </section>
 
-      <div class="project">
-        <h3>SaltStack WordPress</h3>
-        <p>Salt ile WordPress kurulum ve yapılandırma otomasyonu.</p>
-        <a href="https://github.com/kapatalcs/kapatal-wordpress" target="_blank">→ GitHub'da Gör</a>
-      </div>
-    </section>
+  <section class="section" id="portfolio" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>Coming soon: A full showcase of simulated attacks, red/blue team projects and more.</p>
+  </section>
 
-    <section id="contact">
-      <h2>İletişim</h2>
-      <p>📧 <a href="mailto:yusufislamozaydin@gmail.com">yusufislamozaydin@gmail.com</a></p>
-      <p>💼 <a href="https://www.linkedin.com/in/yusufislamozaydin/" target="_blank">LinkedIn Profilim</a></p>
-    </section>
-  </main>
+  <section class="section" id="awards" data-aos="fade-up">
+    <h2>Awards</h2>
+    <p><i class="fas fa-trophy"></i> Certified Ethical Hacker (CEH), Offensive Security Certified Professional (OSCP), CyberSec Bootcamp Champion 2024</p>
+  </section>
 
   <footer>
-    &copy; 2025 Yusuf İslam Özaydın
+    <p>&copy; 2025 CSumeSecure. All rights reserved. | <i class="fas fa-sun" id="theme-toggle"></i></p>
   </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      toggle.classList.toggle('fa-sun');
+      toggle.classList.toggle('fa-moon');
+    });
+  </script>
 </body>
 </html>
