@@ -1,103 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yusuf İslam Özaydın</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #222;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #ddd;
-      text-decoration: none;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .project {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .project h3 {
-      margin-top: 0;
-    }
-    .contact a {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #0066cc;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>Yusuf İslam Özaydın</h1>
-    <p>Computer Engineering Student / Security Engineer</p>
-    <nav>
-      <a href="#projects">Projeler</a>
-      <a href="#contact">İletişim</a>
-    </nav>
+    <div class="container">
+      <h1>Yusuf İslam Özaydın</h1>
+      <p>Computer Engineering Student & Security Enthusiast</p>
+      <nav>
+        <a href="#about">Hakkımda</a>
+        <a href="#projects">Projeler</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Hakkımda</h2>
-    <p>Kısa tanıtım kısmı buraya eklenecek.</p>
-  </section>
+  <main class="container">
+    <section id="about">
+      <h2>Hakkımda</h2>
+      <p>Bilgisayar mühendisliği öğrencisiyim. Sistem güvenliği, açık kaynak yazılımlar ve otomasyon konularına özel ilgi duyuyorum.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projeler</h2>
+    <section id="projects">
+      <h2>Projeler</h2>
 
-    <div class="project">
-      <h3>SaltStack Developer Environment</h3>
-      <p>Salt tabanlı geliştirme ortamı.</p>
-      <a href="https://github.com/kapatalcs/kapatal-dev-env-saltstack" target="_blank">GitHub Proje Linki</a>
-    </div>
+      <div class="project">
+        <h3>SaltStack Developer Environment</h3>
+        <p>Salt tabanlı geliştirme ortamı otomasyonu.</p>
+        <a href="https://github.com/kapatalcs/kapatal-dev-env-saltstack" target="_blank">→ GitHub'da Gör</a>
+      </div>
 
-    <div class="project">
-      <h3>SaltStack Wordpress</h3>
-      <p>Salt ile Wordpress otomasyonu.</p>
-      <a href="https://github.com/kapatalcs/kapatal-wordpress" target="_blank">GitHub Proje Linki</a>
-    </div>
-  </section>
+      <div class="project">
+        <h3>SaltStack WordPress</h3>
+        <p>Salt ile WordPress kurulum ve yapılandırma otomasyonu.</p>
+        <a href="https://github.com/kapatalcs/kapatal-wordpress" target="_blank">→ GitHub'da Gör</a>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>İletişim</h2>
-    <div class="contact">
-      <a href="mailto:yusufislamozaydin@gmail.com">📧 yusufislamozaydin@gmail.com</a>
-      <a href="https://www.linkedin.com/in/yusufislamozaydin/" target="_blank">💼 LinkedIn Profilim</a>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>İletişim</h2>
+      <p>📧 <a href="mailto:yusufislamozaydin@gmail.com">yusufislamozaydin@gmail.com</a></p>
+      <p>💼 <a href="https://www.linkedin.com/in/yusufislamozaydin/" target="_blank">LinkedIn Profilim</a></p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Yusuf İslam Özaydın
   </footer>
-
 </body>
 </html>
