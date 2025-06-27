@@ -1,86 +1,105 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yusuf | Siber Güvenlik Uzmanı</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
   <header>
-    <div class="container">
-      <h1 class="logo">Yusuf</h1>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Anasayfa</a></li>
-          <li><a href="#about">Hakkımda</a></li>
-          <li><a href="#projects">Projeler</a></li>
-          <li><a href="#contact">İletişim</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
+    <nav>
+      <div class="logo">MyLogo</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="container" data-aos="fade-up">
-      <h2>Merhaba, ben</h2>
-      <h1 class="cyber-text">Yusuf Özaydın</h1>
-      <p class="typing">Siber Güvenlik Uzmanı | Pentester | Backend Geliştirici</p>
-      <a href="#" class="btn">CV İndir</a>
+    <div class="hero-text" data-aos="fade-up">
+      <h1>Hi, I'm <span>Your Name</span></h1>
+      <p class="typing">Cybersecurity Specialist | Developer | Pentester</p>
+      <a href="assets/cv.pdf" class="btn" download>Download CV</a>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about" data-aos="fade-right">
-    <div class="container">
-      <h2>Hakkımda</h2>
-      <p>Bilgisayar mühendisliği öğrencisiyim. Siber güvenlik alanına ilgi duyuyorum ve çeşitli projelerde yer aldım.</p>
-    </div>
+  <section id="about" class="section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects" data-aos="fade-up">
-    <div class="container">
-      <h2>Projeler</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Proje 1</h3>
-          <p>Siber güvenlik analizi yapan bir Python scripti</p>
-        </div>
-        <div class="project-card">
-          <h3>Proje 2</h3>
-          <p>Web zafiyet tarayıcısı (OWASP odaklı)</p>
-        </div>
-        <div class="project-card">
-          <h3>Proje 3</h3>
-          <p>Backend API projesi (JWT ile kimlik doğrulama)</p>
-        </div>
+  <section id="services" class="section" data-aos="fade-up">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Penetration Testing</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Secure Coding</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-network-wired"></i>
+        <h3>Network Security</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact" data-aos="fade-up">
-    <div class="container">
-      <h2>İletişim</h2>
-      <form>
-        <input type="text" placeholder="Adınız" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Mesajınız"></textarea>
-        <button class="btn">Gönder</button>
-      </form>
+  <section id="portfolio" class="section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Description of Project 1.</p>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Description of Project 2.</p>
+      </div>
+      <div class="card">
+        <h3>Project 3</h3>
+        <p>Description of Project 3.</p>
+      </div>
     </div>
   </section>
 
+  <section id="awards" class="section" data-aos="fade-up">
+    <h2>Awards</h2>
+    <ul class="awards">
+      <li><i class="fas fa-award"></i> Best Cybersecurity Student 2024</li>
+      <li><i class="fas fa-trophy"></i> Capture The Flag Winner - DEFCON</li>
+      <li><i class="fas fa-medal"></i> Ethical Hacker Certification</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Yusuf. Tüm Hakları Saklıdır.</p>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
