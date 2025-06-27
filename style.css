@@ -1,47 +1,115 @@
-/* Temel reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Sayfa gövdesi */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f7fa;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f4f4;
   color: #333;
-  padding: 20px;
+  line-height: 1.6;
 }
 
-/* Başlık */
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.5em;
-  color: #222;
-}
-
-/* Paragraflar */
-p {
-  margin-bottom: 1em;
-  font-size: 1rem;
-}
-
-/* Konteyner */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 0;
 }
 
-/* Bağlantılar */
-a {
+header {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bfff;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+  border-left: 5px solid #00bfff;
+  padding-left: 0.5rem;
+}
+
+.project {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.project:hover {
+  transform: scale(1.01);
+}
+
+.project h3 {
+  margin-bottom: 0.5rem;
   color: #0077cc;
+}
+
+.project a {
+  color: #00bfff;
   text-decoration: none;
 }
-a:hover {
+
+.project a:hover {
   text-decoration: underline;
+}
+
+footer {
+  background-color: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
