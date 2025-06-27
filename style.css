@@ -260,30 +260,32 @@ footer {
   background-color: var(--primary-color);
   color: #0b0c10;
 }
-/* Hero metnini üst katmana al */
+/* Hero metni videoların en üstünde kalsın */
 .hero-text {
   position: relative;
-  z-index: 2;         /* Metin videoların üstünde kalsın */
+  z-index: 3;                /* 2 → 3 yükselttik */
 }
 
-/* Üstteki (overlay) video */
+/* Üst (overlay) video */
 .fg-video {
   position: absolute;
-  top: 50%;
+  top: 55%;                  /* Dilere göre ayarla */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 55vw;        /* İstenirse %'yi veya sabit px değeri ayarla */
-  max-width: 800px;
+
+  width: 40vw;               /* Daha küçük */
+  max-width: 550px;
   height: auto;
-  z-index: 1;         /* Arkaplanın üstünde, metnin altında */
+
+  opacity: 0.55;             /* Transparanlık */
+  pointer-events: none;      /* Tıklamaları engellemez */
+  z-index: 1;                /* Hero-text’ten aşağıda */
+
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
-  pointer-events: none; /* Link tıklamalarını engellemez */
+  box-shadow: 0 0 20px rgba(0,0,0,.35);
 }
 
-/* Çok küçük ekranlarda videoyu küçült */
+/* Çok dar ekranlarda hâlâ görünür kalsın */
 @media (max-width: 500px) {
-  .fg-video {
-    width: 90vw;
-  }
+  .fg-video { width: 80vw; }
 }
