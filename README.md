@@ -1,1 +1,0 @@
-# kapatalcs.github.io
