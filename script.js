@@ -5,7 +5,6 @@ function typeWriterSegmentedLine(container, segments, delay = 40) {
     container.appendChild(p);
 
     for (const segment of segments) {
-      // Eğer href varsa tag zorunlu olarak 'a' olsun
       const tag = segment.href ? 'a' : (segment.tag || 'span');
       const el = document.createElement(tag);
 
@@ -179,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const outputWrapper = document.getElementById("output-wrapper");
   const commandInput = document.getElementById("command-input");
 
-  // İlk açılışta welcome mesajı
   showWelcomeMessage();
 
   commandInput.addEventListener("keydown", async (e) => {
@@ -228,7 +226,6 @@ function updateClock() {
   const now = new Date();
   const clockElement = document.getElementById('terminal-clock');
   
-  // Dijital saat formatı: HH:MM:SS
   const timeString = now.toLocaleTimeString('tr-TR', {
     hour12: false,
     hour: '2-digit',
@@ -236,20 +233,17 @@ function updateClock() {
     second: '2-digit'
   });
   
-  // Ekstra: Tarih bilgisi (opsiyonel)
   const dateString = now.toLocaleDateString('tr-TR', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
-  }).replace(/\//g, '.'); // 12/07/2023 → 12.07.2023
+  }).replace(/\//g, '.');
   
   clockElement.textContent = `🕒 ${timeString} | 📅 ${dateString}`;
 }
 
-// Saniyede bir güncelle
 setInterval(updateClock, 1000);
 
-// Sayfa yüklendiğinde hemen çalıştır
 document.addEventListener('DOMContentLoaded', updateClock);
 
 // --- Müzik Kütüphanesi ---
@@ -286,12 +280,11 @@ const progressBar = document.getElementById('progress-bar');
 const currentTimeEl = document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 
-let currentTrack = -1;  // Başlangıçta müzik seçili değil
+let currentTrack = -1;  
 let isPlaying = false;
 
 function loadTrack(trackIndex) {
   if (trackIndex < 0 || trackIndex >= musicLibrary.length) {
-    // Geçersiz indeks, "Müzik Seçilmedi" göster
     musicCover.src = "assets/music/covers/default.jpg";
     musicTitle.textContent = "Müzik Seçilmedi";
     musicArtist.textContent = "Terminal Player";
