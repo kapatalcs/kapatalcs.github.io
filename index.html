@@ -3,45 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my website!</title>
+    <title>Modern Terminal</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="terminal-clock">00:00:00</div>
 
+    <!-- Müzik Çalar (Masaüstü) -->
     <div id="music-player">
-  <audio id="audio" loop></audio>
-  
-  <div class="music-display">
-    <img id="music-cover" src="assets/music/covers/default.jpg" alt="Album Cover">
-    <div class="music-info">
-      <div id="music-title">Müzik Seçilmedi</div>
-      <div id="music-artist">Terminal Player</div>
+        <audio id="audio" loop></audio>
+        <div class="music-display">
+            <img id="music-cover" src="assets/music/covers/default.jpg" alt="Album Cover">
+            <div class="music-info">
+                <div id="music-title">Müzik Seçilmedi</div>
+                <div id="music-artist">Terminal Player</div>
+            </div>
+        </div>
+        <div class="music-controls">
+            <button id="prev-btn" title="Önceki">⏮</button>
+            <button id="play-btn" title="Oynat/Duraklat">▶</button>
+            <button id="next-btn" title="Sonraki">⏭</button>
+        </div>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
     </div>
-  </div>
 
-  <div class="music-controls">
-    <button id="prev-btn" title="Önceki">⏮</button>
-    <button id="play-btn" title="Oynat/Duraklat">▶</button>
-    <button id="next-btn" title="Sonraki">⏭</button>
-  </div>
+    <!-- Mobil Müzik Çubuğu -->
+    <div id="music-bar-compact">
+        <button id="mobile-prev" class="mobile-music-btn">⏮</button>
+        <button id="mobile-play" class="mobile-music-btn">▶</button>
+        <button id="mobile-next" class="mobile-music-btn">⏭</button>
+        <div class="mobile-music-info">
+            <div id="music-bar-title">Müzik Seçilmedi</div>
+            <div id="music-bar-time">0:00</div>
+        </div>
+    </div>
 
-  <div class="progress-container">
-    <div id="progress-bar"></div>
-    <span id="current-time">0:00</span>
-    <span id="duration">0:00</span>
-  </div>
-</div>
-
+    <!-- Terminal -->
     <div class="terminal-container">
         <div class="terminal" id="terminal">
-          <div class="output-wrapper" id="output-wrapper">
-            <div class="welcome-message">
-                <p>Welcome! Type <span class="command">help</span> to start.</p>
+            <div class="output-wrapper" id="output-wrapper">
+                <div class="welcome-message">
+                    <p>Welcome! Type <span class="command">help</span> to start.</p>
+                </div>
             </div>
-          </div>
-            <div class="input-container"> <!-- Yeni eklenen container -->
+            <div class="input-container">
                 <div class="input-line">
                     <span class="prompt">guest@portfolio:~$</span>
                     <input type="text" id="command-input" autofocus>
