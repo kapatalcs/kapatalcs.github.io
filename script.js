@@ -243,7 +243,6 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
-
 document.addEventListener('DOMContentLoaded', updateClock);
 
 // --- Müzik Kütüphanesi ---
@@ -280,7 +279,7 @@ const progressBar = document.getElementById('progress-bar');
 const currentTimeEl = document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 
-let currentTrack = -1;  
+let currentTrack = -1;
 let isPlaying = false;
 
 function loadTrack(trackIndex) {
@@ -288,6 +287,7 @@ function loadTrack(trackIndex) {
     musicCover.src = "assets/music/covers/default.jpg";
     musicTitle.textContent = "Müzik Seçilmedi";
     musicArtist.textContent = "Terminal Player";
+    document.getElementById('music-bar-title').textContent = "Müzik Seçilmedi";
     audio.src = "";
     return;
   }
@@ -297,22 +297,39 @@ function loadTrack(trackIndex) {
   musicCover.src = track.cover;
   musicTitle.textContent = track.title;
   musicArtist.textContent = track.artist;
+  document.getElementById('music-bar-title').textContent = track.title;
+  document.getElementById('music-bar-time').textContent = "0:00";
+  
+  audio.addEventListener('loadedmetadata', function() {
+    updateDuration();
+    updateMobileTime();
+  });
 }
 
 function togglePlay() {
   if (isPlaying) {
-    audio.pause();
-    playBtn.textContent = "▶";
-    isPlaying = false;
+    pauseMusic();
   } else {
-    if (currentTrack === -1) {
-      currentTrack = 0;
-      loadTrack(currentTrack);
-    }
-    audio.play().catch(err => console.error("Play hatası:", err));
-    playBtn.textContent = "⏸";
-    isPlaying = true;
+    playMusic();
   }
+}
+
+function playMusic() {
+  if (currentTrack === -1) {
+    currentTrack = 0;
+    loadTrack(currentTrack);
+  }
+  audio.play().catch(err => console.error("Play hatası:", err));
+  playBtn.textContent = "⏸";
+  document.getElementById('mobile-play').textContent = "⏸";
+  isPlaying = true;
+}
+
+function pauseMusic() {
+  audio.pause();
+  playBtn.textContent = "▶";
+  document.getElementById('mobile-play').textContent = "▶";
+  isPlaying = false;
 }
 
 function nextTrack() {
@@ -348,6 +365,12 @@ function updateProgress() {
   currentTimeEl.textContent = `${minutes}:${seconds}`;
 }
 
+function updateMobileTime() {
+  const minutes = Math.floor(audio.currentTime / 60);
+  const seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+  document.getElementById('music-bar-time').textContent = `${minutes}:${seconds}`;
+}
+
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
@@ -361,9 +384,33 @@ nextBtn.addEventListener('click', nextTrack);
 prevBtn.addEventListener('click', prevTrack);
 progressBar.addEventListener('click', setProgress);
 
-audio.addEventListener('timeupdate', updateProgress);
-audio.addEventListener('loadedmetadata', updateDuration);
-audio.addEventListener('ended', nextTrack); // Parça bittiğinde otomatik sonraki
+// Mobil kontroller
+document.getElementById('mobile-play').addEventListener('click', togglePlay);
+document.getElementById('mobile-next').addEventListener('click', nextTrack);
+document.getElementById('mobile-prev').addEventListener('click', prevTrack);
 
-// Sayfa yüklendiğinde "Müzik Seçilmedi" durumu göster
-loadTrack(currentTrack);
+audio.addEventListener('timeupdate', function() {
+  updateProgress();
+  updateMobileTime();
+});
+
+audio.addEventListener('loadedmetadata', updateDuration);
+audio.addEventListener('ended', nextTrack);
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 600) {
+    document.getElementById('music-bar-compact').style.display = 'flex';
+  }
+  
+  loadTrack(currentTrack);
+});
+
+// Pencere boyutu değiştiğinde
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 600) {
+    document.getElementById('music-bar-compact').style.display = 'flex';
+  } else {
+    document.getElementById('music-bar-compact').style.display = 'none';
+  }
+});
