@@ -103,8 +103,13 @@ const commands = {
         ],
         [
           { text: "- " },
-          { text: "Keylogger", tag: "a", class: "link", href: "https://github.com/kapatalcs/keylogger" },
-          { text: " — Written in Python using the pynput library. Its purpose is to save the values entered from the desired computer system." }
+          { text: "Encrypted-Chat-App", tag: "a", class: "link", href: "https://github.com/kapatalcs/Encrypted-Chat-App" },
+          { text: "  — This project is a multi-user CLI-based chat application developed using Python with RSA encryption support." }
+        ],
+        [
+          { text: "- " },
+          { text: "Password-Manager", tag: "a", class: "link", href: "https://github.com/kapatalcs/Password-Manager" },
+          { text: " — This project is a password manager developed to securely store account information." }
         ]
       ];
       typeWriterSegmentedLines(container, lines, 30);
