@@ -226,7 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
   commandInput.focus();
 });
 
-// Saati güncelleyen fonksiyon
 function updateClock() {
   const now = new Date();
   const clockElement = document.getElementById('terminal-clock');
@@ -383,13 +382,11 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-// Event Listeners
 playBtn.addEventListener('click', togglePlay);
 nextBtn.addEventListener('click', nextTrack);
 prevBtn.addEventListener('click', prevTrack);
 progressBar.addEventListener('click', setProgress);
 
-// Mobil kontroller
 document.getElementById('mobile-play').addEventListener('click', togglePlay);
 document.getElementById('mobile-next').addEventListener('click', nextTrack);
 document.getElementById('mobile-prev').addEventListener('click', prevTrack);
@@ -402,7 +399,6 @@ audio.addEventListener('timeupdate', function() {
 audio.addEventListener('loadedmetadata', updateDuration);
 audio.addEventListener('ended', nextTrack);
 
-// Sayfa yüklendiğinde
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 600) {
     document.getElementById('music-bar-compact').style.display = 'flex';
