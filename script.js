@@ -108,15 +108,15 @@ const commands = {
         ],
         [
           { text: "- " },
-          { text: "Password-Manager", tag: "a", class: "link", href: "https://github.com/kapatalcs/Password-Manager" },
-          { text: " — This project is a password manager developed to securely store account information." }
-        ],
-         [
-          { text: "- " },
           { text: "Snake-AI DQN", tag: "a", class: "link", href: "https://github.com/kapatalcs/SnakeAI-DQN" },
           { text: " — A self-learning AI that plays the classic Snake game using Deep Q-Learning combined with a rule-based Hybrid Solver." }
         ],
-         [
+        [
+          { text: "- " },
+          { text: "Password-Manager", tag: "a", class: "link", href: "https://github.com/kapatalcs/Password-Manager" },
+          { text: " — This project is a password manager developed to securely store account information." }
+        ],
+        [
           { text: "- " },
           { text: "Port Scanner", tag: "a", class: "link", href: "https://github.com/kapatalcs/Port-Scanner" },
           { text: " — This is a basic TCP port scanner written in Python. It scans the first 1000 TCP ports of a given target, displays open ports with their corresponding services, and logs the results into a file." }
