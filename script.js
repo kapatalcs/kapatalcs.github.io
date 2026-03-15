@@ -93,13 +93,18 @@ const commands = {
         [{ text: "My recent works:" }],
         [
           { text: "- " },
+          { text: "detection-engine-architecture", tag: "a", class: "link", href: "https://github.com/kapatalcs/PurpleForge-DetectionEngineArchitecture" },
+          { text: "  —  Architected a modular detection engine to simulate adversarial activity and generate structured security telemetry for analysis." }
+        ],
+        [
+          { text: "- " },
           { text: "kapatal-dev-env-saltstack", tag: "a", class: "link", href: "https://github.com/kapatalcs/kapatal-dev-env-saltstack" },
           { text: "  — SaltStack state to automate the setup of a development environment for user." }
         ],
         [
           { text: "- " },
           { text: "kapatal-wordpress", tag: "a", class: "link", href: "https://github.com/kapatalcs/kapatal-wordpress" },
-          { text: "  — Automated user setup, Docker, WordPress, and HAProxy deployment for Kapatal server using SaltStack." }
+          { text: "  — Automated user setup, Docker, WordPress, and HAProxy deployment for server using SaltStack." }
         ],
         [
           { text: "- " },
